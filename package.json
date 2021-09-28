@@ -1,18 +1,21 @@
 {
-  "name": "typescript-template",
+  "name": "template-fox-ts",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "typings": "dist/index.d.js",
   "scripts": {
     "postinstall": "npx typesync || :",
+    "prepublish": "npm run build",
     "start": "npx ts-node ./src",
     "start:dev": "npx ts-node-dev ./src",
     "test": "npx jest",
     "prebuild": "rm -rf dist",
     "build": "npx tsc",
-    "npm:publish": "npx np"
+    "npm:publish": "npx np",
+    "prebundle": "del template-fox-ts.zip",
+    "bundle": "zip -r template-fox-ts.zip ./"
   },
   "repository": {
     "type": "git",
@@ -33,9 +36,12 @@
   "homepage": "https://github.com/TylerGarlick/typescript-template#readme",
   "devDependencies": {
     "@tsconfig/node16": "^1.0.1",
+    "@types/arangodb": "^3.5.13",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.5",
+    "@types/joi": "^17.2.3",
+    "@types/node": "^15.14.9",
     "@types/prettier": "2.3.0",
+    "foxx-cli": "^2.0.0",
     "jest": "^27.0.6",
     "np": "^7.5.0",
     "prettier": "^2.3.2",
@@ -45,5 +51,8 @@
     "ts-node-dev": "^1.1.7",
     "typescript": "^4.3.4",
     "typesync": "^0.8.0"
+  },
+  "dependencies": {
+    "joi": "^17.4.2"
   }
 }

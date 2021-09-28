@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/foxx-manifest",
+  "main": "dist/index.js",
+  "engines": {
+    "arangodb": "^3.0.0"
+  },
+  "name": "template-fox-ts",
+  "version": "0.0.1",
+  "tests": "test/**/*.js"
+}
